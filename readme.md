@@ -1,13 +1,15 @@
 # Qochel - Pure C, No Extras
 
 English Translation is [here](readme_en.md).  
-Qochel is still implementing!  
-Now Qochel is `v0.0.1`!
+
+> [!NOTE] Qochel v0.1.0 has been released!
+> `v0.1.0` is the first stable version of Qochel.  
+> 👉 For more information, see Release page.
 
 ## Overview
 
-`Qochel`はRustで書かれた`C`トランスコンパイラです。  
-特長は純粋なCトランスコンパイラであることで、Cを書きやすくする機能は一切含まれていません。
+`Qochel`はRustで書かれた音楽へのリスペクトです。  
+C言語をケッヘル番号風のQochel番号によって難読化できる文法を持っています。  
 
 ## Installation
 
@@ -21,9 +23,11 @@ cd qochel
 cargo build
 ```
 
+生成された`target`ディレクトリ内の実行ファイルを適当な場所に配置してください。
+
 ## Translation Table
 
-全てのキーワード、変数名、記号、その他は散逸を防ぐため、合理的に構成されたQochel（コッヘル）番号で表示され管理されます。
+キーワード、変数名、文字列は散逸を防ぐためQochel（コッヘル）番号で管理されます。
 
 ### C Keywords
 
@@ -119,6 +123,9 @@ QAhn6 = "瀧廉太郎" # Clang allows this too.
 
 ### Strings
 
+> [!IMPORTANT]
+> 正しい絵文字が表示されない場合があります。
+> 
 文字列はTOMLにQuartet（Qua）を記述し使用します。  
 `Quartet.toml`:
 
@@ -132,18 +139,15 @@ Qua4 = "Piano" # Don't have to be "Quartet"!
 
 ## Example
 
-> [IMPORTANT]
-> ソースファイル内では設計上ASCII文字のみが有効です。  
-> `QAhn.toml`などでは問題有りません。
-
-Source Tree:
+最終的なディレクトリ構成:
 
 ```tree
 .
-├── QAhn.toml         <--- Configuration file
-├── Quartet.toml      <--- Configuration file
-├── runner            <--- Executable file
-└── source.qochel     <--- Source file
+├── QAhn.toml     <--- Configuration file
+├── Quartet.toml  <--- Configuration file
+├── runner        <--- Executable file
+├── main.c        <--- Executable file
+└── source.qochel <--- Source file
 ```
 
 `QAhn.toml`:
@@ -179,10 +183,10 @@ Q17 QAhn3(Q30) {
 run:
 
 ```terminal
-qochel translate source.qochel -o runner`
+qochel source.qochel
 ```
 
-内部的にQochelは次のCコードを生成し、`clang`でビルドします。
+QochelはCコードを生成し、`clang`でビルドします。
 
 ```c
 #include <stdio.h>
@@ -203,8 +207,9 @@ Hello, world!
 
 ## System
 
-1. `Haydn`がソースファイルをCコードに変換します。
-2. `Mozart`ががCコードをビルドして成果物を保存します。
+1. `Bach`がソースコードや設定ファイルを読み込みます。
+2. `Haydn`がソースファイルをCコードに変換します。
+3. `Mozart`ががCコードをビルドして成果物を保存します。
 
 ## License
 
