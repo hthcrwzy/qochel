@@ -1,0 +1,6 @@
+QAhn1 = "<stdio.h>"              # You can replace header file name.
+QAhn1a = "printf"                # You can use (an) alphabet(s).
+QAhn1aa = "Qochel Qochel Qochel"
+QAhn1b = "Halo"                  # You don't have to use.
+QAhn2 = "greeting"
+QAhn3 = "main"                   # You can write names of functions.

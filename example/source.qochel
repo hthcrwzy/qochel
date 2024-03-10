@@ -1,0 +1,7 @@
+// You can write comments using // or /**/
+QP9 QAhn1 // Qochel numbers must be separated by spaces
+Q17 QAhn3(Q30) {
+    Q5 Q4* QAhn2 = Qua1;
+    QAhn1a(Qua2, QAhn2);
+    Q20 0;
+}
